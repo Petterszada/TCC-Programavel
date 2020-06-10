@@ -1,0 +1,75 @@
+unit unt_principal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Buttons;
+
+type
+  Tfrm_principal = class(TForm)
+    btn_servico: TSpeedButton;
+    btn_alunos: TSpeedButton;
+    btn_agendam: TSpeedButton;
+    btn_aluno: TSpeedButton;
+    btn_pagamentos: TSpeedButton;
+    btn_logout: TSpeedButton;
+    procedure btn_servicoClick(Sender: TObject);
+    procedure btn_agendamClick(Sender: TObject);
+    procedure btn_pagamentosClick(Sender: TObject);
+    procedure btn_logoutClick(Sender: TObject);
+    procedure btn_alunosClick(Sender: TObject);
+    procedure btn_alunoClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frm_principal: Tfrm_principal;
+
+implementation
+
+{$R *.dfm}
+
+uses unt_servico, unt_agendam, unt_pagamento,
+  unt_login, unt_cadastrar_alunos, unt_aluno;
+
+procedure Tfrm_principal.btn_agendamClick(Sender: TObject);
+begin
+frm_agendam:=Tfrm_agendam.Create(self);
+frm_agendam.Show;
+end;
+
+procedure Tfrm_principal.btn_alunoClick(Sender: TObject);
+begin
+frm_aluno:=Tfrm_aluno.Create(self);
+frm_aluno.Show;
+end;
+
+procedure Tfrm_principal.btn_alunosClick(Sender: TObject);
+begin
+frm_cadastrar_alunos:=Tfrm_cadastrar_alunos.Create(self);
+frm_cadastrar_alunos.Show;
+end;
+
+procedure Tfrm_principal.btn_logoutClick(Sender: TObject);
+begin
+frm_login:=Tfrm_login.Create(self);
+frm_login.Show;
+end;
+
+procedure Tfrm_principal.btn_pagamentosClick(Sender: TObject);
+begin
+frm_pagamentos:=Tfrm_pagamentos.Create(self);
+frm_pagamentos.Show;
+end;
+
+procedure Tfrm_principal.btn_servicoClick(Sender: TObject);
+begin
+frm_servico:=Tfrm_servico.Create(self);  //cria em memoria o form
+frm_servico.Show;
+end;
+
+end.

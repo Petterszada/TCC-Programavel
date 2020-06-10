@@ -1,0 +1,119 @@
+unit unt_servico;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.Grids, Vcl.DBGrids,
+  Vcl.Buttons, Vcl.DBActns, System.Actions, Vcl.ActnList,
+  Vcl.PlatformDefaultStyleActnCtrls, Vcl.ActnMan, Vcl.StdCtrls, Vcl.Mask,
+  Vcl.DBCtrls, Vcl.ComCtrls;
+
+type
+  Tfrm_servico = class(TForm)
+    Label2: TLabel;
+    edit_desc: TDBEdit;
+    Label3: TLabel;
+    edit_valor: TDBEdit;
+    Label4: TLabel;
+    edit_obs: TDBEdit;
+    ActionManager1: TActionManager;
+    DatasetInsert1: TDataSetInsert;
+    DatasetDelete1: TDataSetDelete;
+    DatasetEdit1: TDataSetEdit;
+    DatasetPost1: TDataSetPost;
+    DatasetCancel1: TDataSetCancel;
+    SpeedButton1: TSpeedButton;
+    SpeedButton2: TSpeedButton;
+    btn_delete: TSpeedButton;
+    SpeedButton4: TSpeedButton;
+    SpeedButton5: TSpeedButton;
+    DBGrid1: TDBGrid;
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure SpeedButton4Click(Sender: TObject);
+    procedure btn_deleteClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    cad:string;
+  end;
+
+var
+  frm_servico: Tfrm_servico;
+
+implementation
+
+{$R *.dfm}
+
+uses unt_dtm, unt_aluno, unt_avaliacao, unt_cad_agendam, unt_cadastrar_alunos,
+  unt_login, unt_pagamento, unt_principal;
+
+procedure Tfrm_servico.btn_deleteClick(Sender: TObject);
+begin
+if MessageDlg('Deseja mesmo cancelar ?', MtConfirmation, [Mbyes, MbNo],0)=mrYES then
+  begin
+    dtm.servicos.Delete;
+  end;
+
+end;
+
+procedure Tfrm_servico.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+if cad='sim' then
+begin
+  if MessageDlg('Uma operação está sendo executada, gostaria de cancelar?', MtConfirmation, [Mbyes, MbNo],0)=mrYES then
+  begin
+    dtm.servicos.Cancel;
+    Action:= caFree;
+  end
+  else
+  Action:=caNone;
+
+end;
+end;
+
+procedure Tfrm_servico.SpeedButton4Click(Sender: TObject);
+begin
+if edit_desc.Text='' then
+
+begin
+  ShowMessage('o campo Descrição não pode ficar em branco');
+  edit_desc.Color:=clRed;
+  edit_desc.SetFocus;
+
+end
+else
+begin
+edit_desc.Color:=clWhite
+end;
+
+if edit_obs.Text='' then
+begin
+  ShowMessage('o campo Observação não pode ficar em branco');
+  edit_obs.Color:=clRed;
+  edit_obs.SetFocus;
+end
+else
+begin
+edit_obs.Color:=clWhite
+end;
+
+if edit_valor.Text='' then
+begin
+  ShowMessage('o campo Valor não pode ficar em branco');
+  edit_valor.Color:=clRed;
+  edit_valor.SetFocus;
+end
+else
+begin
+edit_valor.Color:=clWhite
+end;
+end;
+
+
+
+
+
+end.
+

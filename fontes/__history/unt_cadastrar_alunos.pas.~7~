@@ -1,0 +1,62 @@
+unit unt_cadastrar_alunos;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.Grids, Vcl.DBGrids,
+  Vcl.DBActns, System.Actions, Vcl.ActnList, Vcl.PlatformDefaultStyleActnCtrls,
+  Vcl.ActnMan, Vcl.StdCtrls, Vcl.Mask, Vcl.DBCtrls, Vcl.Buttons;
+
+type
+  Tfrm_cadastrar_alunos = class(TForm)
+    btn_inserir: TSpeedButton;
+    btn_editar: TSpeedButton;
+    btn_deletar: TSpeedButton;
+    btn_salvar: TSpeedButton;
+    btn_cancelar: TSpeedButton;
+    Label1: TLabel;
+    DBEdit1: TDBEdit;
+    Label2: TLabel;
+    DBEdit2: TDBEdit;
+    Label3: TLabel;
+    DBEdit3: TDBEdit;
+    Label4: TLabel;
+    DBEdit4: TDBEdit;
+    Label5: TLabel;
+    DBEdit5: TDBEdit;
+    Label6: TLabel;
+    ActionManager1: TActionManager;
+    DatasetInsert1: TDataSetInsert;
+    DatasetDelete1: TDataSetDelete;
+    DatasetEdit1: TDataSetEdit;
+    DatasetPost1: TDataSetPost;
+    DatasetCancel1: TDataSetCancel;
+    DBGrid1: TDBGrid;
+    Label7: TLabel;
+    DBEdit7: TDBEdit;
+    Label8: TLabel;
+    DBComboBox2: TDBComboBox;
+    DBLookupComboBox1: TDBLookupComboBox;
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frm_cadastrar_alunos: Tfrm_cadastrar_alunos;
+
+implementation
+
+{$R *.dfm}
+
+uses unt_dtm;
+
+procedure Tfrm_cadastrar_alunos.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+Action:=caFree;
+end;
+
+end.

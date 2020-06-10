@@ -1,0 +1,69 @@
+unit unt_dtm;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def,
+  FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.MySQL,
+  FireDAC.Phys.MySQLDef, FireDAC.VCLUI.Wait, FireDAC.Comp.UI, Data.DB,
+  FireDAC.Comp.Client, FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf,
+  FireDAC.DApt, FireDAC.Comp.DataSet;
+
+type
+  Tdtm = class(TDataModule)
+    conexao: TFDConnection;
+    FDPhysMySQLDriverLink1: TFDPhysMySQLDriverLink;
+    FDGUIxWaitCursor1: TFDGUIxWaitCursor;
+    servicos: TFDQuery;
+    ds_servicos: TDataSource;
+    alunos: TFDQuery;
+    ds_alunos: TDataSource;
+    alunosid_aluno: TFDAutoIncField;
+    alunosnome_aluno: TStringField;
+    alunossobrenome_aluno: TStringField;
+    alunosdata_nasc: TDateField;
+    alunoscpf: TStringField;
+    alunosemail: TStringField;
+    alunossexo: TStringField;
+    alunosprofissao: TStringField;
+    alunosservico: TIntegerField;
+    servicosid_servico: TFDAutoIncField;
+    servicosplano_descricao: TStringField;
+    servicosvalor_servico: TBCDField;
+    servicosobservacao: TStringField;
+    avaliacao: TFDQuery;
+    ds_avaliacao: TDataSource;
+    avaliacaoidavaliacao: TFDAutoIncField;
+    avaliacaodata_avaliacao: TDateField;
+    avaliacaoaluno: TIntegerField;
+    avaliacaoqueixa: TMemoField;
+    avaliacaohabitos: TMemoField;
+    avaliacaodoenca: TMemoField;
+    avaliacaoantecedentes: TMemoField;
+    avaliacaotratamento: TMemoField;
+    avaliacaodor_mov: TStringField;
+    avaliacaocirurgias: TStringField;
+    avaliacaoposicoes: TMemoField;
+    avaliacaoexer_ativi: TStringField;
+    avaliacaoobjetivos: TStringField;
+    procedure servicosBeforePost(DataSet: TDataSet);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  dtm: Tdtm;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+uses unt_aluno, unt_avaliacao, unt_cad_agendam, unt_cadastrar_alunos, unt_login,
+  unt_pagamento, unt_principal, unt_servico;
+
+{$R *.dfm}
+
+

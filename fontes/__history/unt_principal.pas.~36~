@@ -1,0 +1,81 @@
+unit unt_principal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Buttons, Vcl.ExtCtrls;
+
+type
+  Tfrm_principal = class(TForm)
+    pnp_titulo: TPanel;
+    pnp_fundo: TPanel;
+    btn_aluno: TSpeedButton;
+    btn_alunos: TSpeedButton;
+    btn_cad_agendam: TSpeedButton;
+    btn_logout: TSpeedButton;
+    btn_pagamentos: TSpeedButton;
+    btn_servico: TSpeedButton;
+    Panel1: TPanel;
+    pnp_visu: TPanel;
+    Panel3: TPanel;
+    procedure btn_servicoClick(Sender: TObject);
+    procedure btn_pagamentosClick(Sender: TObject);
+    procedure btn_logoutClick(Sender: TObject);
+    procedure btn_alunosClick(Sender: TObject);
+    procedure btn_alunoClick(Sender: TObject);
+    procedure Panel3MouseEnter(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frm_principal: Tfrm_principal;
+
+implementation
+
+{$R *.dfm}
+
+uses unt_servico, unt_cad_agendam, unt_pagamento,
+  unt_login, unt_cadastrar_alunos, unt_aluno;
+
+procedure Tfrm_principal.btn_alunoClick(Sender: TObject);
+begin
+frm_aluno:=Tfrm_aluno.Create(self);
+frm_aluno.Show;
+end;
+
+procedure Tfrm_principal.btn_alunosClick(Sender: TObject);
+begin
+frm_cadastrar_alunos:=Tfrm_cadastrar_alunos.Create(self);
+frm_cadastrar_alunos.Show;
+end;
+
+procedure Tfrm_principal.btn_logoutClick(Sender: TObject);
+begin
+frm_login:=Tfrm_login.Create(self);
+frm_login.Show;
+end;
+
+procedure Tfrm_principal.btn_pagamentosClick(Sender: TObject);
+begin
+frm_pagamentos:=Tfrm_pagamentos.Create(self);
+frm_pagamentos.Show;
+end;
+
+procedure Tfrm_principal.btn_servicoClick(Sender: TObject);
+begin
+frm_servico:=Tfrm_servico.Create(self);  //cria em memoria o form
+frm_servico.Show;
+end;
+
+procedure Tfrm_principal.Panel3MouseEnter(Sender: TObject);
+begin
+    if not (spender is Tpanel) then
+    Exit;
+    (sender as TPanel) Color=RGBToColor(43,162,182);
+end;
+
+end.

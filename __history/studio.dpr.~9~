@@ -1,0 +1,18 @@
+program studio;
+
+uses
+  Vcl.Forms,
+  unt_principal in 'fontes\unt_principal.pas' {frm_principal},
+  unt_servico in 'fontes\unt_servico.pas' {frm_servico},
+  unt_dtm in 'fontes\unt_dtm.pas' {dtm: TDataModule},
+  unt_alunos in 'fontes\unt_alunos.pas' {frm_alunos};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(Tfrm_principal, frm_principal);
+  Application.CreateForm(Tdtm, dtm);
+  Application.Run;
+end.
