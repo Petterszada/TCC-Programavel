@@ -1,9 +1,9 @@
-object frm_cadastrar_alunos: Tfrm_cadastrar_alunos
+object frm_servico: Tfrm_servico
   Left = 0
   Top = 0
-  Caption = 'Cadastrar Alunos'
-  ClientHeight = 543
-  ClientWidth = 848
+  Caption = 'Servi'#231'os'
+  ClientHeight = 428
+  ClientWidth = 782
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -15,9 +15,25 @@ object frm_cadastrar_alunos: Tfrm_cadastrar_alunos
   OnClose = FormClose
   PixelsPerInch = 96
   TextHeight = 13
+  object Label2: TLabel
+    Left = 216
+    Top = 40
+    Width = 46
+    Height = 13
+    Caption = 'Descri'#231#227'o'
+    FocusControl = edit_desc
+  end
+  object Label3: TLabel
+    Left = 337
+    Top = 106
+    Width = 24
+    Height = 13
+    Caption = 'Valor'
+    FocusControl = edit_valor
+  end
   object btn_inserir: TSpeedButton
-    Left = 96
-    Top = 224
+    Left = 106
+    Top = 196
     Width = 169
     Height = 38
     Action = DatasetInsert1
@@ -135,8 +151,8 @@ object frm_cadastrar_alunos: Tfrm_cadastrar_alunos
     NumGlyphs = 2
   end
   object btn_editar: TSpeedButton
-    Left = 293
-    Top = 224
+    Left = 289
+    Top = 196
     Width = 169
     Height = 38
     Action = DatasetEdit1
@@ -253,10 +269,10 @@ object frm_cadastrar_alunos: Tfrm_cadastrar_alunos
       FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
     NumGlyphs = 2
   end
-  object btn_deletar: TSpeedButton
-    Left = 488
-    Top = 224
-    Width = 167
+  object btn_delete: TSpeedButton
+    Left = 480
+    Top = 196
+    Width = 169
     Height = 38
     Action = DatasetDelete1
     Glyph.Data = {
@@ -371,11 +387,11 @@ object frm_cadastrar_alunos: Tfrm_cadastrar_alunos
       FFFFFFFFFEFEFEFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
       FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
     NumGlyphs = 2
-    OnClick = btn_deletarClick
+    OnClick = btn_deleteClick
   end
   object btn_salvar: TSpeedButton
-    Left = 200
-    Top = 268
+    Left = 192
+    Top = 240
     Width = 169
     Height = 38
     Action = DatasetPost1
@@ -491,10 +507,11 @@ object frm_cadastrar_alunos: Tfrm_cadastrar_alunos
       FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
       FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
     NumGlyphs = 2
+    OnClick = btn_salvarClick
   end
   object btn_cancelar: TSpeedButton
-    Left = 392
-    Top = 268
+    Left = 384
+    Top = 240
     Width = 169
     Height = 38
     Action = DatasetCancel1
@@ -612,122 +629,44 @@ object frm_cadastrar_alunos: Tfrm_cadastrar_alunos
     NumGlyphs = 2
   end
   object Label1: TLabel
-    Left = 136
-    Top = 8
-    Width = 27
+    Left = 384
+    Top = 37
+    Width = 58
     Height = 13
-    Caption = 'Nome'
+    Caption = 'Observa'#231#227'o'
     FocusControl = DBEdit1
   end
-  object Label2: TLabel
-    Left = 392
-    Top = 8
-    Width = 54
-    Height = 13
-    Caption = 'Sobrenome'
-    FocusControl = DBEdit2
-  end
-  object Label3: TLabel
-    Left = 136
-    Top = 56
-    Width = 55
-    Height = 13
-    Caption = 'Nascimento'
-    FocusControl = DBEdit3
-  end
-  object Label4: TLabel
-    Left = 392
-    Top = 59
-    Width = 19
-    Height = 13
-    Caption = 'CPF'
-    FocusControl = DBEdit4
-  end
-  object Label5: TLabel
-    Left = 136
-    Top = 112
-    Width = 44
-    Height = 13
-    Caption = 'Profiss'#227'o'
-    FocusControl = DBEdit5
-  end
-  object Label6: TLabel
-    Left = 392
-    Top = 115
-    Width = 35
-    Height = 13
-    Caption = 'Servi'#231'o'
-  end
-  object Label7: TLabel
-    Left = 136
-    Top = 163
-    Width = 28
-    Height = 13
-    Caption = 'E-mail'
-    FocusControl = DBEdit7
-  end
-  object Label8: TLabel
-    Left = 392
-    Top = 163
-    Width = 24
-    Height = 13
-    Caption = 'Sexo'
-  end
-  object DBEdit1: TDBEdit
-    Left = 136
-    Top = 24
-    Width = 217
+  object edit_desc: TDBEdit
+    Left = 216
+    Top = 53
+    Width = 100
     Height = 21
-    DataField = 'nome_aluno'
-    DataSource = dtm.ds_alunos
+    DataField = 'plano_descricao'
+    DataSource = dtm.ds_servicos
     TabOrder = 0
   end
-  object DBEdit2: TDBEdit
-    Left = 392
-    Top = 24
-    Width = 217
+  object edit_valor: TDBEdit
+    Left = 311
+    Top = 125
+    Width = 70
     Height = 21
-    DataField = 'sobrenome_aluno'
-    DataSource = dtm.ds_alunos
+    DataField = 'valor_servico'
+    DataSource = dtm.ds_servicos
     TabOrder = 1
   end
-  object DBEdit3: TDBEdit
-    Left = 136
-    Top = 75
-    Width = 217
-    Height = 21
-    DataField = 'data_nasc'
-    DataSource = dtm.ds_alunos
-    MaxLength = 10
-    TabOrder = 2
-  end
-  object DBEdit4: TDBEdit
-    Left = 392
-    Top = 75
-    Width = 217
-    Height = 21
-    DataField = 'cpf'
-    DataSource = dtm.ds_alunos
-    MaxLength = 14
-    TabOrder = 3
-  end
-  object DBEdit5: TDBEdit
-    Left = 136
-    Top = 131
-    Width = 217
-    Height = 21
-    DataField = 'profissao'
-    DataSource = dtm.ds_alunos
-    TabOrder = 4
-  end
   object DBGrid1: TDBGrid
-    Left = 96
-    Top = 326
-    Width = 561
+    Left = 200
+    Top = 300
+    Width = 360
     Height = 120
-    DataSource = dtm.ds_alunos
+    Color = clMenuBar
+    DataSource = dtm.ds_servicos
+    FixedColor = clWhite
+    GradientEndColor = clWhite
     Options = [dgTitles, dgIndicator, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
-    TabOrder = 5
+    ParentShowHint = False
+    ShowHint = False
+    TabOrder = 2
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -11
@@ -737,154 +676,86 @@ object frm_cadastrar_alunos: Tfrm_cadastrar_alunos
       item
         Alignment = taCenter
         Expanded = False
-        FieldName = 'id_aluno'
+        FieldName = 'id_servico'
         Title.Alignment = taCenter
-        Title.Caption = 'C'#243'digo Aluno'
+        Title.Caption = 'C'#243'digo do Servi'#231'o'
+        Title.Color = 7841023
         Visible = True
       end
       item
         Alignment = taCenter
         Expanded = False
-        FieldName = 'nome_aluno'
+        FieldName = 'plano_descricao'
         Title.Alignment = taCenter
-        Title.Caption = 'Nome do Aluno'
-        Width = 98
+        Title.Caption = 'Descri'#231#227'o'
+        Width = 80
         Visible = True
       end
       item
         Alignment = taCenter
         Expanded = False
-        FieldName = 'sobrenome_aluno'
+        FieldName = 'valor_servico'
         Title.Alignment = taCenter
-        Title.Caption = 'Sobrenome do Aluno'
-        Width = 119
+        Title.Caption = 'Valor'
+        Width = 52
         Visible = True
       end
       item
         Alignment = taCenter
         Expanded = False
-        FieldName = 'data_nasc'
+        FieldName = 'observacao'
         Title.Alignment = taCenter
-        Title.Caption = 'Data de Nascimento'
-        Width = 64
-        Visible = True
-      end
-      item
-        Alignment = taCenter
-        Expanded = False
-        FieldName = 'cpf'
-        Title.Alignment = taCenter
-        Title.Caption = 'CPF'
-        Width = 64
-        Visible = True
-      end
-      item
-        Alignment = taCenter
-        Expanded = False
-        FieldName = 'email'
-        Title.Alignment = taCenter
-        Title.Caption = 'E-mail'
-        Width = 149
-        Visible = True
-      end
-      item
-        Alignment = taCenter
-        Expanded = False
-        FieldName = 'sexo'
-        Title.Alignment = taCenter
-        Title.Caption = 'Sexo'
-        Width = 70
-        Visible = True
-      end
-      item
-        Alignment = taCenter
-        Expanded = False
-        FieldName = 'profissao'
-        Title.Alignment = taCenter
-        Title.Caption = 'Profiss'#227'o'
-        Width = 90
-        Visible = True
-      end
-      item
-        Alignment = taCenter
-        Expanded = False
-        FieldName = 'servico'
-        Title.Alignment = taCenter
-        Title.Caption = 'Servi'#231'o'
+        Title.Caption = 'Observa'#231#227'o'
+        Width = 102
         Visible = True
       end>
   end
-  object DBEdit7: TDBEdit
-    Left = 136
-    Top = 182
-    Width = 217
+  object DBEdit1: TDBEdit
+    Left = 384
+    Top = 53
+    Width = 100
     Height = 21
-    DataField = 'email'
-    DataSource = dtm.ds_alunos
-    TabOrder = 6
-  end
-  object DBComboBox2: TDBComboBox
-    Left = 392
-    Top = 182
-    Width = 217
-    Height = 21
-    DataField = 'sexo'
-    DataSource = dtm.ds_alunos
-    Items.Strings = (
-      'masculino'
-      'feminino')
-    TabOrder = 7
-  end
-  object DBLookupComboBox1: TDBLookupComboBox
-    Left = 392
-    Top = 136
-    Width = 217
-    Height = 21
-    DataField = 'servico'
-    DataSource = dtm.ds_alunos
-    KeyField = 'id_servico'
-    ListField = 'plano_descricao'
-    ListSource = dtm.ds_servicos
-    TabOrder = 8
+    DataField = 'observacao'
+    DataSource = dtm.ds_servicos
+    TabOrder = 3
   end
   object ActionManager1: TActionManager
-    Left = 744
-    Top = 16
+    Left = 648
     StyleName = 'Platform Default'
     object DatasetInsert1: TDataSetInsert
       Category = 'Dataset'
       Caption = 'Inserir'
       Hint = 'Insert'
       ImageIndex = 4
-      DataSource = dtm.ds_alunos
+      DataSource = dtm.ds_servicos
     end
     object DatasetDelete1: TDataSetDelete
       Category = 'Dataset'
       Caption = 'Deletar'
       Hint = 'Delete'
       ImageIndex = 5
-      DataSource = dtm.ds_alunos
+      DataSource = dtm.ds_servicos
     end
     object DatasetEdit1: TDataSetEdit
       Category = 'Dataset'
       Caption = 'Editar'
       Hint = 'Edit'
       ImageIndex = 6
-      DataSource = dtm.ds_alunos
+      DataSource = dtm.ds_servicos
     end
     object DatasetPost1: TDataSetPost
       Category = 'Dataset'
       Caption = 'Salvar'
       Hint = 'Post'
       ImageIndex = 7
-      DataSource = dtm.ds_alunos
+      DataSource = dtm.ds_servicos
     end
     object DatasetCancel1: TDataSetCancel
       Category = 'Dataset'
       Caption = 'Cancelar'
       Hint = 'Cancel'
       ImageIndex = 8
-      DataSource = dtm.ds_alunos
+      DataSource = dtm.ds_servicos
     end
   end
 end

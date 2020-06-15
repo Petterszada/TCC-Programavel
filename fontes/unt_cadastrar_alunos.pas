@@ -38,9 +38,7 @@ type
     Label8: TLabel;
     DBComboBox2: TDBComboBox;
     DBLookupComboBox1: TDBLookupComboBox;
-    btn_avaliacao: TSpeedButton;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
-    procedure btn_avaliacaoClick(Sender: TObject);
     procedure btn_deletarClick(Sender: TObject);
   private
     { Private declarations }
@@ -58,12 +56,6 @@ implementation
 
 uses unt_dtm, unt_avaliacao, unt_aluno, unt_cad_agendam, unt_login,
   unt_pagamento, unt_principal, unt_servico;
-
-procedure Tfrm_cadastrar_alunos.btn_avaliacaoClick(Sender: TObject);
-begin
-frm_avaliacao:=Tfrm_avaliacao.Create(self);
-frm_avaliacao.Show;
-end;
 
 procedure Tfrm_cadastrar_alunos.btn_deletarClick(Sender: TObject);
 begin

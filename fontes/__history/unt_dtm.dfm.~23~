@@ -14,9 +14,7 @@ object dtm: Tdtm
     Top = 16
   end
   object FDPhysMySQLDriverLink1: TFDPhysMySQLDriverLink
-    VendorLib = 
-      'C:\Users\pette\Google Drive\TCC - Programavel\fontes\libmysql.dl' +
-      'l'
+    VendorLib = 'C:\Users\pette\Google Drive\TCC-Programavel\fontes\libmysql.dll'
     Left = 96
     Top = 16
   end
@@ -27,7 +25,11 @@ object dtm: Tdtm
   end
   object servicos: TFDQuery
     Active = True
+    BeforeInsert = servicosBeforeInsert
+    BeforeEdit = servicosBeforeEdit
     BeforePost = servicosBeforePost
+    AfterPost = servicosAfterPost
+    AfterCancel = servicosAfterCancel
     Connection = conexao
     SQL.Strings = (
       'select * from servicos')
@@ -66,9 +68,14 @@ object dtm: Tdtm
   end
   object alunos: TFDQuery
     Active = True
+    BeforeInsert = alunosBeforeInsert
+    BeforeEdit = alunosBeforeEdit
+    BeforePost = alunosBeforePost
+    AfterPost = alunosAfterPost
+    AfterCancel = alunosAfterCancel
     Connection = conexao
     SQL.Strings = (
-      'select * from cadastrar_aluno'
+      'select * from aluno'
       '')
     Left = 96
     Top = 104
@@ -94,11 +101,13 @@ object dtm: Tdtm
       FieldName = 'data_nasc'
       Origin = 'data_nasc'
       Required = True
+      EditMask = '!99/99/0000;1;_'
     end
     object alunoscpf: TStringField
       FieldName = 'cpf'
       Origin = 'cpf'
       Required = True
+      EditMask = '000.000.000-00;1;_'
       Size = 15
     end
     object alunosemail: TStringField
@@ -142,6 +151,7 @@ object dtm: Tdtm
       FieldName = 'idavaliacao'
       Origin = 'idavaliacao'
       ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
     end
     object avaliacaodata_avaliacao: TDateField
       FieldName = 'data_avaliacao'

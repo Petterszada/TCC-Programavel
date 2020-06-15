@@ -15,22 +15,23 @@ type
     edit_desc: TDBEdit;
     Label3: TLabel;
     edit_valor: TDBEdit;
-    Label4: TLabel;
-    edit_obs: TDBEdit;
     ActionManager1: TActionManager;
     DatasetInsert1: TDataSetInsert;
     DatasetDelete1: TDataSetDelete;
     DatasetEdit1: TDataSetEdit;
     DatasetPost1: TDataSetPost;
     DatasetCancel1: TDataSetCancel;
-    SpeedButton1: TSpeedButton;
-    SpeedButton2: TSpeedButton;
-    SpeedButton3: TSpeedButton;
-    SpeedButton4: TSpeedButton;
-    SpeedButton5: TSpeedButton;
+    btn_inserir: TSpeedButton;
+    btn_editar: TSpeedButton;
+    btn_delete: TSpeedButton;
+    btn_salvar: TSpeedButton;
+    btn_cancelar: TSpeedButton;
     DBGrid1: TDBGrid;
+    Label1: TLabel;
+    DBEdit1: TDBEdit;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
-    procedure SpeedButton4Click(Sender: TObject);
+    procedure btn_salvarClick(Sender: TObject);
+    procedure btn_deleteClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -48,12 +49,31 @@ implementation
 uses unt_dtm, unt_aluno, unt_avaliacao, unt_cad_agendam, unt_cadastrar_alunos,
   unt_login, unt_pagamento, unt_principal;
 
-procedure Tfrm_servico.FormClose(Sender: TObject; var Action: TCloseAction);
+procedure Tfrm_servico.btn_deleteClick(Sender: TObject);
 begin
-Action:=caFree;
+if MessageDlg('Deseja mesmo deletar ?', MtConfirmation, [Mbyes, MbNo],0)=mrYES then
+  begin
+    dtm.servicos.Delete;
+  end;
+
 end;
 
-procedure Tfrm_servico.SpeedButton4Click(Sender: TObject);
+procedure Tfrm_servico.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+if cad='sim' then
+begin
+  if MessageDlg('Uma operação está sendo executada, gostaria de cancelar?', MtConfirmation, [Mbyes, MbNo],0)=mrYES then
+  begin
+    dtm.servicos.Cancel;
+    Action:= caFree;
+  end
+  else
+  Action:=caNone;
+
+end;
+end;
+
+procedure Tfrm_servico.btn_salvarClick(Sender: TObject);
 begin
 if edit_desc.Text='' then
 
@@ -66,17 +86,6 @@ end
 else
 begin
 edit_desc.Color:=clWhite
-end;
-
-if edit_obs.Text='' then
-begin
-  ShowMessage('o campo Observação não pode ficar em branco');
-  edit_obs.Color:=clRed;
-  edit_obs.SetFocus;
-end
-else
-begin
-edit_obs.Color:=clWhite
 end;
 
 if edit_valor.Text='' then

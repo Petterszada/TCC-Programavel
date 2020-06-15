@@ -161,7 +161,6 @@
       BevelOuter = bvNone
       Caption = 'Logout'
       Color = 10797567
-      DragCursor = crDefault
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -16
@@ -171,26 +170,6 @@
       ParentFont = False
       TabOrder = 7
       OnClick = Panel3Click
-    end
-    object pnp_avaliação: TPanel
-      Left = 16
-      Top = 398
-      Width = 193
-      Height = 43
-      Cursor = crHandPoint
-      BevelOuter = bvNone
-      Caption = 'Avalia'#231#227'o'
-      Color = 10797567
-      DragCursor = crHandPoint
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -16
-      Font.Name = 'Tahoma'
-      Font.Style = []
-      ParentBackground = False
-      ParentFont = False
-      TabOrder = 8
-      OnClick = pnp_avaliaçãoClick
     end
   end
   object pnp_titulo: TPanel

@@ -3,7 +3,7 @@ object frm_avaliacao: Tfrm_avaliacao
   Top = 0
   Caption = 'Avalia'#231#227'o'
   ClientHeight = 612
-  ClientWidth = 801
+  ClientWidth = 872
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -428,14 +428,15 @@ object frm_avaliacao: Tfrm_avaliacao
       FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
       FFFFFFFFFEFFFEFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
       FFFFFFFFFFFEFFFEFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
+    OnClick = btn_deletarClick
   end
   object calendario: TMonthCalendar
     Left = 175
     Top = 93
-    Width = 225
-    Height = 160
+    Width = 194
+    Height = 158
     Date = 43987.000000000000000000
-    TabOrder = 12
+    TabOrder = 11
     Visible = False
     OnClick = calendarioClick
   end
@@ -450,7 +451,7 @@ object frm_avaliacao: Tfrm_avaliacao
   end
   object mm_habitos: TDBMemo
     Left = 64
-    Top = 154
+    Top = 156
     Width = 177
     Height = 53
     DataField = 'habitos'
@@ -488,7 +489,7 @@ object frm_avaliacao: Tfrm_avaliacao
     Left = 328
     Top = 309
     Width = 177
-    Height = 53
+    Height = 21
     DataField = 'dor_mov'
     DataSource = dtm.ds_avaliacao
     TabOrder = 5
@@ -497,7 +498,7 @@ object frm_avaliacao: Tfrm_avaliacao
     Left = 592
     Top = 231
     Width = 177
-    Height = 53
+    Height = 21
     DataField = 'cirurgias'
     DataSource = dtm.ds_avaliacao
     TabOrder = 6
@@ -515,7 +516,7 @@ object frm_avaliacao: Tfrm_avaliacao
     Left = 592
     Top = 67
     Width = 177
-    Height = 47
+    Height = 21
     DataField = 'exer_ativi'
     DataSource = dtm.ds_avaliacao
     TabOrder = 8
@@ -524,7 +525,7 @@ object frm_avaliacao: Tfrm_avaliacao
     Left = 592
     Top = 142
     Width = 177
-    Height = 53
+    Height = 21
     DataField = 'objetivos'
     DataSource = dtm.ds_avaliacao
     TabOrder = 9
@@ -538,14 +539,6 @@ object frm_avaliacao: Tfrm_avaliacao
     TabOrder = 10
     OnClick = btn_calendarioClick
   end
-  object edt_selecione: TEdit
-    Left = 64
-    Top = 64
-    Width = 105
-    Height = 21
-    TabOrder = 11
-    Text = 'Selecione uma data'
-  end
   object Escolher_aluno: TDBLookupComboBox
     Left = 64
     Top = 108
@@ -553,10 +546,10 @@ object frm_avaliacao: Tfrm_avaliacao
     Height = 21
     DataField = 'aluno'
     DataSource = dtm.ds_avaliacao
-    KeyField = 'nome_aluno'
+    KeyField = 'id_aluno'
     ListField = 'nome_aluno'
     ListSource = dtm.ds_alunos
-    TabOrder = 13
+    TabOrder = 12
   end
   object DBGrid1: TDBGrid
     Left = 64
@@ -564,8 +557,8 @@ object frm_avaliacao: Tfrm_avaliacao
     Width = 705
     Height = 120
     DataSource = dtm.ds_avaliacao
-    Options = [dgTitles, dgIndicator, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
-    TabOrder = 14
+    Options = [dgTitles, dgIndicator, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+    TabOrder = 13
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -11
@@ -577,8 +570,8 @@ object frm_avaliacao: Tfrm_avaliacao
         Expanded = False
         FieldName = 'idavaliacao'
         Title.Alignment = taCenter
-        Title.Caption = 'C'#243'digo da Avalia'#231#227
-        Width = 103
+        Title.Caption = 'C'#243'digo da Avalia'#231#227'o'
+        Width = 115
         Visible = True
       end
       item
@@ -603,7 +596,7 @@ object frm_avaliacao: Tfrm_avaliacao
         Expanded = False
         FieldName = 'queixa'
         Title.Alignment = taCenter
-        Title.Caption = 'Quiexas do Aluno'
+        Title.Caption = 'Queixas do Aluno'
         Visible = True
       end
       item
@@ -612,6 +605,7 @@ object frm_avaliacao: Tfrm_avaliacao
         FieldName = 'habitos'
         Title.Alignment = taCenter
         Title.Caption = 'H'#225'bitos'
+        Width = 51
         Visible = True
       end
       item
@@ -620,6 +614,7 @@ object frm_avaliacao: Tfrm_avaliacao
         FieldName = 'doenca'
         Title.Alignment = taCenter
         Title.Caption = 'Doen'#231'as'
+        Width = 56
         Visible = True
       end
       item
@@ -655,7 +650,7 @@ object frm_avaliacao: Tfrm_avaliacao
         FieldName = 'cirurgias'
         Title.Alignment = taCenter
         Title.Caption = 'Cirurgias'
-        Width = 65
+        Width = 51
         Visible = True
       end
       item
@@ -664,6 +659,7 @@ object frm_avaliacao: Tfrm_avaliacao
         FieldName = 'posicoes'
         Title.Alignment = taCenter
         Title.Caption = 'Posi'#231#245'es do dia a dia '
+        Width = 111
         Visible = True
       end
       item
@@ -684,6 +680,15 @@ object frm_avaliacao: Tfrm_avaliacao
         Width = 100
         Visible = True
       end>
+  end
+  object edt_selecione: TDBEdit
+    Left = 64
+    Top = 66
+    Width = 105
+    Height = 21
+    DataField = 'data_avaliacao'
+    DataSource = dtm.ds_avaliacao
+    TabOrder = 14
   end
   object ActionManager1: TActionManager
     Top = 48

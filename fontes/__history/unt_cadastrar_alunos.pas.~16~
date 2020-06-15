@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.Grids, Vcl.DBGrids,
   Vcl.DBActns, System.Actions, Vcl.ActnList, Vcl.PlatformDefaultStyleActnCtrls,
-  Vcl.ActnMan, Vcl.StdCtrls, Vcl.Mask, Vcl.DBCtrls, Vcl.Buttons;
+  Vcl.ActnMan, Vcl.StdCtrls, Vcl.Mask, Vcl.DBCtrls, Vcl.Buttons,System.MaskUtils;
 
 type
   Tfrm_cadastrar_alunos = class(TForm)
@@ -38,11 +38,15 @@ type
     Label8: TLabel;
     DBComboBox2: TDBComboBox;
     DBLookupComboBox1: TDBLookupComboBox;
+    btn_avaliacao: TSpeedButton;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure btn_avaliacaoClick(Sender: TObject);
+    procedure btn_deletarClick(Sender: TObject);
   private
     { Private declarations }
   public
     { Public declarations }
+      cad:string;
   end;
 
 var
@@ -52,11 +56,42 @@ implementation
 
 {$R *.dfm}
 
-uses unt_dtm;
+uses unt_dtm, unt_avaliacao, unt_aluno, unt_cad_agendam, unt_login,
+  unt_pagamento, unt_principal, unt_servico;
+
+procedure Tfrm_cadastrar_alunos.btn_avaliacaoClick(Sender: TObject);
+begin
+frm_avaliacao:=Tfrm_avaliacao.Create(self);
+frm_avaliacao.Show;
+end;
+
+procedure Tfrm_cadastrar_alunos.btn_deletarClick(Sender: TObject);
+begin
+try
+   dtm.alunos.Delete;
+except
+Showmessage('O aluno não pode ser excluído  porque tem uma avaliação vinculado a ele');
+end;
+end;
 
 procedure Tfrm_cadastrar_alunos.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
-Action:=caFree;
+if cad='sim' then
+begin
+  if MessageDlg('Uma operação está sendo executada, gostaria de cancelar?', MtConfirmation, [Mbyes, MbNo],0)=mrYES then
+  begin
+    dtm.alunos.Cancel;
+    Action:= caFree;
+  end
+  else
+  Action:=caNone;
+
 end;
+end;
+
+
+begin
+
+
 
 end.

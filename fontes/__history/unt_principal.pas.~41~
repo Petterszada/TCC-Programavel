@@ -18,12 +18,10 @@ type
     pnp_cadastro_agendamentos: TPanel;
     Panel2: TPanel;
     Panel3: TPanel;
-    pnp_avaliação: TPanel;
     procedure pnp_alunosClick(Sender: TObject);
     procedure pnp_serviçosClick(Sender: TObject);
     procedure Panel2Click(Sender: TObject);
     procedure Panel3Click(Sender: TObject);
-    procedure pnp_avaliaçãoClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -38,7 +36,7 @@ implementation
 {$R *.dfm}
 
 uses unt_servico, unt_cad_agendam, unt_pagamento,
-  unt_login, unt_cadastrar_alunos, unt_aluno, unt_avaliacao, unt_dtm;
+  unt_login, unt_cadastrar_alunos, unt_aluno;
 
 procedure Tfrm_principal.Panel2Click(Sender: TObject);
 begin
@@ -56,12 +54,6 @@ procedure Tfrm_principal.pnp_alunosClick(Sender: TObject);
 begin
 frm_aluno:=Tfrm_aluno.Create(self);
 frm_aluno.Show;
-end;
-
-procedure Tfrm_principal.pnp_avaliaçãoClick(Sender: TObject);
-begin
-frm_avaliacao:=Tfrm_avaliacao.Create(self);
-frm_avaliacao.Show;
 end;
 
 procedure Tfrm_principal.pnp_serviçosClick(Sender: TObject);

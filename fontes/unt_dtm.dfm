@@ -14,9 +14,7 @@ object dtm: Tdtm
     Top = 16
   end
   object FDPhysMySQLDriverLink1: TFDPhysMySQLDriverLink
-    VendorLib = 
-      'C:\Users\pette\Google Drive\TCC - Programavel\fontes\libmysql.dl' +
-      'l'
+    VendorLib = 'C:\Users\pette\Google Drive\TCC-Programavel\fontes\libmysql.dll'
     Left = 96
     Top = 16
   end
@@ -53,6 +51,8 @@ object dtm: Tdtm
       FieldName = 'valor_servico'
       Origin = 'valor_servico'
       Required = True
+      MaxValue = 999.990000000000000000
+      MinValue = 1.000000000000000000
       Precision = 8
       Size = 2
     end
