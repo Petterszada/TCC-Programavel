@@ -30,7 +30,7 @@ type
     Label1: TLabel;
     DBEdit1: TDBEdit;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
-    procedure btn_salvarClick(Sender: TObject);
+//    procedure btn_salvarClick(Sender: TObject);
     procedure btn_deleteClick(Sender: TObject);
   private
     { Private declarations }
@@ -51,7 +51,7 @@ uses unt_dtm, unt_aluno, unt_avaliacao, unt_cad_agendam, unt_cadastrar_alunos,
 
 procedure Tfrm_servico.btn_deleteClick(Sender: TObject);
 begin
-if MessageDlg('Deseja mesmo deletar ?', MtConfirmation, [Mbyes, MbNo],0)=mrYES then
+if MessageDlg('Deseja mesmo deletar o Serviço ?', MtConfirmation, [Mbyes, MbNo],0)=mrYES then
   begin
     dtm.servicos.Delete;
   end;
@@ -73,32 +73,32 @@ begin
 end;
 end;
 
-procedure Tfrm_servico.btn_salvarClick(Sender: TObject);
-begin
-if edit_desc.Text='' then
+//procedure Tfrm_servico.btn_salvarClick(Sender: TObject);
+//begin
+//if edit_desc.Text='' then
 
-begin
-  ShowMessage('o campo Descrição não pode ficar em branco');
-  edit_desc.Color:=clRed;
-  edit_desc.SetFocus;
+//begin
+  //ShowMessage('o campo Descrição não pode ficar em branco');
+ // edit_desc.Color:=clRed;
+ // edit_desc.SetFocus;
 
-end
-else
-begin
-edit_desc.Color:=clWhite
-end;
+//end
+//else
+//begin
+//edit_desc.Color:=clWhite
+//end;
 
-if edit_valor.Text='' then
-begin
-  ShowMessage('o campo Valor não pode ficar em branco');
-  edit_valor.Color:=clRed;
-  edit_valor.SetFocus;
-end
-else
-begin
-edit_valor.Color:=clWhite
-end;
-end;
+//if edit_valor.Text='' then
+//begin
+//  ShowMessage('o campo Valor não pode ficar em branco');
+//  edit_valor.Color:=clRed;
+//  edit_valor.SetFocus;
+//end
+//else
+//begin
+//edit_valor.Color:=clWhite
+//end;
+//end;
 
 
 

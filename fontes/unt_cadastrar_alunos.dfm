@@ -766,7 +766,6 @@ object frm_cadastrar_alunos: Tfrm_cadastrar_alunos
         FieldName = 'data_nasc'
         Title.Alignment = taCenter
         Title.Caption = 'Data de Nascimento'
-        Width = 64
         Visible = True
       end
       item
@@ -775,7 +774,6 @@ object frm_cadastrar_alunos: Tfrm_cadastrar_alunos
         FieldName = 'cpf'
         Title.Alignment = taCenter
         Title.Caption = 'CPF'
-        Width = 64
         Visible = True
       end
       item

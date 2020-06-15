@@ -872,7 +872,6 @@ object frm_avaliacao: Tfrm_avaliacao
         FieldName = 'queixa'
         Title.Alignment = taCenter
         Title.Caption = 'Queixas do Aluno'
-        Width = 64
         Visible = True
       end
       item

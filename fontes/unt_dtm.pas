@@ -129,8 +129,7 @@ raise Exception.Create('O campo Descrição não pode ficar vazio');
 if servicosvalor_servico.IsNull then
 raise Exception.Create('O campo Valor não pode ficar vazio');
 
-if servicosobservacao.IsNull then
-raise Exception.Create('O campo Observação não pode ficar vazio');
+
 
 end;
 

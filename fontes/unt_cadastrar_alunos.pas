@@ -59,10 +59,14 @@ uses unt_dtm, unt_avaliacao, unt_aluno, unt_cad_agendam, unt_login,
 
 procedure Tfrm_cadastrar_alunos.btn_deletarClick(Sender: TObject);
 begin
-try
-   dtm.alunos.Delete;
-except
-Showmessage('O aluno não pode ser excluído  porque tem uma avaliação vinculado a ele');
+
+begin
+  if MessageDlg('Quer mesmo deletar o Aluno?', MtConfirmation,[Mbyes, MbNo],0) =mrYes then
+  begin
+    dtm.alunos.Delete;
+    end
+    else
+
 end;
 end;
 

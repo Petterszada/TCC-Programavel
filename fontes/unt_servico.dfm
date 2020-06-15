@@ -507,7 +507,6 @@ object frm_servico: Tfrm_servico
       FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
       FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
     NumGlyphs = 2
-    OnClick = btn_salvarClick
   end
   object btn_cancelar: TSpeedButton
     Left = 384

@@ -75,7 +75,7 @@ end;
 
 procedure Tfrm_avaliacao.btn_deletarClick(Sender: TObject);
 begin
-if MessageDlg('Deseja mesmo cancelar ?', MtConfirmation, [Mbyes, MbNo],0)=mrYES then
+if MessageDlg('Deseja mesmo Deletar a Avaliação ?', MtConfirmation, [Mbyes, MbNo],0)=mrYES then
   begin
     dtm.servicos.Delete;
   end;
