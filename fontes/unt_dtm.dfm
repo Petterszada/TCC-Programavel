@@ -226,6 +226,16 @@ object dtm: Tdtm
       Required = True
       Size = 255
     end
+    object avaliacaonew_aluno: TStringField
+      FieldKind = fkLookup
+      FieldName = 'new_aluno'
+      LookupDataSet = alunos
+      LookupKeyFields = 'id_aluno'
+      LookupResultField = 'nome_aluno'
+      KeyFields = 'aluno'
+      Size = 50
+      Lookup = True
+    end
   end
   object ds_avaliacao: TDataSource
     DataSet = avaliacao

@@ -53,7 +53,12 @@ procedure Tfrm_servico.btn_deleteClick(Sender: TObject);
 begin
 if MessageDlg('Deseja mesmo deletar o Serviço ?', MtConfirmation, [Mbyes, MbNo],0)=mrYES then
   begin
-    dtm.servicos.Delete;
+  try
+     dtm.servicos.Delete;
+  except
+      ShowMessage('o serviço não pode ser deletado porque tem alunos visculados ao mesmo');
+  end;
+
   end;
 
 end;

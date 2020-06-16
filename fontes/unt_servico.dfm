@@ -274,7 +274,8 @@ object frm_servico: Tfrm_servico
     Top = 196
     Width = 169
     Height = 38
-    Action = DatasetDelete1
+    Hint = 'Delete'
+    Caption = 'Deletar'
     Glyph.Data = {
       B60D0000424DB60D000000000000360000002800000030000000180000000100
       180000000000800D000000000000000000000000000000000000FFFFFFFFFFFF

@@ -48,6 +48,7 @@ type
     avaliacaoposicoes: TMemoField;
     avaliacaoexer_ativi: TStringField;
     avaliacaoobjetivos: TStringField;
+    avaliacaonew_aluno: TStringField;
     procedure servicosAfterCancel(DataSet: TDataSet);
     procedure servicosAfterPost(DataSet: TDataSet);
     procedure servicosBeforeEdit(DataSet: TDataSet);

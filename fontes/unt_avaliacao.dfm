@@ -590,7 +590,8 @@ object frm_avaliacao: Tfrm_avaliacao
     Top = 384
     Width = 169
     Height = 38
-    Action = DatasetDelete1
+    Hint = 'Delete'
+    Caption = 'Deletar'
     Glyph.Data = {
       B60D0000424DB60D000000000000360000002800000030000000180000000100
       180000000000800D000000000000000000000000000000000000FFFFFFFFFFFF
@@ -841,118 +842,18 @@ object frm_avaliacao: Tfrm_avaliacao
     TitleFont.Style = []
     Columns = <
       item
-        Alignment = taCenter
         Expanded = False
         FieldName = 'idavaliacao'
-        Title.Alignment = taCenter
-        Title.Caption = 'C'#243'digo da Avalia'#231#227'o'
-        Width = 115
         Visible = True
       end
       item
-        Alignment = taCenter
         Expanded = False
         FieldName = 'data_avaliacao'
-        Title.Alignment = taCenter
-        Title.Caption = 'Data da Avalia'#231#227'o'
         Visible = True
       end
       item
-        Alignment = taCenter
         Expanded = False
-        FieldName = 'aluno'
-        Title.Alignment = taCenter
-        Title.Caption = 'Nome do Aluno'
-        Width = 79
-        Visible = True
-      end
-      item
-        Alignment = taCenter
-        Expanded = False
-        FieldName = 'queixa'
-        Title.Alignment = taCenter
-        Title.Caption = 'Queixas do Aluno'
-        Visible = True
-      end
-      item
-        Alignment = taCenter
-        Expanded = False
-        FieldName = 'habitos'
-        Title.Alignment = taCenter
-        Title.Caption = 'H'#225'bitos'
-        Width = 51
-        Visible = True
-      end
-      item
-        Alignment = taCenter
-        Expanded = False
-        FieldName = 'doenca'
-        Title.Alignment = taCenter
-        Title.Caption = 'Doen'#231'as'
-        Width = 56
-        Visible = True
-      end
-      item
-        Alignment = taCenter
-        Expanded = False
-        FieldName = 'antecedentes'
-        Title.Alignment = taCenter
-        Title.Caption = 'Antecedentes'
-        Width = 73
-        Visible = True
-      end
-      item
-        Alignment = taCenter
-        Expanded = False
-        FieldName = 'tratamento'
-        Title.Alignment = taCenter
-        Title.Caption = 'Tratamento'
-        Width = 68
-        Visible = True
-      end
-      item
-        Alignment = taCenter
-        Expanded = False
-        FieldName = 'dor_mov'
-        Title.Alignment = taCenter
-        Title.Caption = 'Dores de Movimento'
-        Width = 110
-        Visible = True
-      end
-      item
-        Alignment = taCenter
-        Expanded = False
-        FieldName = 'cirurgias'
-        Title.Alignment = taCenter
-        Title.Caption = 'Cirurgias'
-        Width = 51
-        Visible = True
-      end
-      item
-        Alignment = taCenter
-        Expanded = False
-        FieldName = 'posicoes'
-        Title.Alignment = taCenter
-        Title.Caption = 'Posi'#231#245'es do dia a dia '
-        Width = 111
-        Visible = True
-      end
-      item
-        Alignment = taCenter
-        Expanded = False
-        FieldName = 'exer_ativi'
-        Title.Alignment = taCenter
-        Title.Caption = 'Exerc'#237'cios ou atividade frequentes'
-        Width = 176
-        Visible = True
-      end
-      item
-        Alignment = taCenter
-        Expanded = False
-        FieldName = 'objetivos'
-        Title.Alignment = taCenter
-        Title.Caption = 'Objetivos do Aluno'
-        Width = 100
+        FieldName = 'new_aluno'
         Visible = True
       end>
   end
