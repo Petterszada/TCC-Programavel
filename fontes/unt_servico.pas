@@ -47,7 +47,7 @@ implementation
 {$R *.dfm}
 
 uses unt_dtm, unt_aluno, unt_avaliacao, unt_cad_agendam, unt_cadastrar_alunos,
-  unt_login, unt_pagamento, unt_principal;
+  unt_login, unt_pagamento, unt_principal, unt_procura_avaliacao;
 
 procedure Tfrm_servico.btn_deleteClick(Sender: TObject);
 begin

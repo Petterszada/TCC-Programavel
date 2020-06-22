@@ -695,7 +695,7 @@ object frm_cadastrar_alunos: Tfrm_cadastrar_alunos
   object DBEdit3: TDBEdit
     Left = 136
     Top = 75
-    Width = 217
+    Width = 211
     Height = 21
     DataField = 'data_nasc'
     DataSource = dtm.ds_alunos
@@ -705,12 +705,13 @@ object frm_cadastrar_alunos: Tfrm_cadastrar_alunos
   object DBEdit4: TDBEdit
     Left = 392
     Top = 75
-    Width = 217
+    Width = 205
     Height = 21
     DataField = 'cpf'
     DataSource = dtm.ds_alunos
-    MaxLength = 14
     TabOrder = 3
+    OnEnter = DBEdit4Enter
+    OnExit = DBEdit4Exit
   end
   object DBEdit5: TDBEdit
     Left = 136
@@ -722,13 +723,13 @@ object frm_cadastrar_alunos: Tfrm_cadastrar_alunos
     TabOrder = 4
   end
   object DBGrid1: TDBGrid
-    Left = 96
+    Left = 94
     Top = 326
     Width = 561
     Height = 120
     DataSource = dtm.ds_alunos
     Options = [dgTitles, dgIndicator, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
-    TabOrder = 5
+    TabOrder = 8
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -11
@@ -844,7 +845,7 @@ object frm_cadastrar_alunos: Tfrm_cadastrar_alunos
     KeyField = 'id_servico'
     ListField = 'plano_descricao'
     ListSource = dtm.ds_servicos
-    TabOrder = 8
+    TabOrder = 5
   end
   object ActionManager1: TActionManager
     Left = 744

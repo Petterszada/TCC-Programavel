@@ -10,7 +10,8 @@ uses
   unt_aluno in 'fontes\unt_aluno.pas' {frm_aluno},
   unt_pagamento in 'fontes\unt_pagamento.pas' {frm_pagamentos},
   unt_login in 'fontes\unt_login.pas' {frm_login},
-  unt_avaliacao in 'fontes\unt_avaliacao.pas' {frm_avaliacao};
+  unt_avaliacao in 'fontes\unt_avaliacao.pas' {frm_avaliacao},
+  unt_procura_avaliacao in 'fontes\unt_procura_avaliacao.pas' {frm_procura_avaliacao};
 
 {$R *.res}
 
@@ -19,6 +20,5 @@ begin
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(Tfrm_principal, frm_principal);
   Application.CreateForm(Tdtm, dtm);
-  Application.CreateForm(Tfrm_avaliacao, frm_avaliacao);
   Application.Run;
 end.

@@ -652,7 +652,7 @@ object frm_servico: Tfrm_servico
     Height = 21
     DataField = 'valor_servico'
     DataSource = dtm.ds_servicos
-    TabOrder = 1
+    TabOrder = 2
   end
   object DBGrid1: TDBGrid
     Left = 200
@@ -666,7 +666,7 @@ object frm_servico: Tfrm_servico
     Options = [dgTitles, dgIndicator, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
     ParentShowHint = False
     ShowHint = False
-    TabOrder = 2
+    TabOrder = 3
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -11
@@ -717,7 +717,7 @@ object frm_servico: Tfrm_servico
     Height = 21
     DataField = 'observacao'
     DataSource = dtm.ds_servicos
-    TabOrder = 3
+    TabOrder = 1
   end
   object ActionManager1: TActionManager
     Left = 648

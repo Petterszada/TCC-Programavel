@@ -6,7 +6,8 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, Vcl.StdCtrls, Vcl.DBCtrls,
   Vcl.Mask, Vcl.Buttons, Data.DB, Vcl.Grids, Vcl.DBGrids, Vcl.DBActns,
-  System.Actions, Vcl.ActnList, Vcl.PlatformDefaultStyleActnCtrls, Vcl.ActnMan;
+  System.Actions, Vcl.ActnList, Vcl.PlatformDefaultStyleActnCtrls, Vcl.ActnMan,
+  Vcl.Menus;
 
 type
   Tfrm_avaliacao = class(TForm)

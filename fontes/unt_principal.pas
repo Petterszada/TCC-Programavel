@@ -16,14 +16,16 @@ type
     pnp_serviços: TPanel;
     pnp_cadastros: TPanel;
     pnp_cadastro_agendamentos: TPanel;
-    Panel2: TPanel;
-    Panel3: TPanel;
+    pnp_cadastrar_alunos: TPanel;
+    pnp_logout: TPanel;
     pnp_avaliação: TPanel;
+    pnp_procura_avaliacao: TPanel;
     procedure pnp_alunosClick(Sender: TObject);
     procedure pnp_serviçosClick(Sender: TObject);
-    procedure Panel2Click(Sender: TObject);
-    procedure Panel3Click(Sender: TObject);
+    procedure pnp_cadastrar_alunosClick(Sender: TObject);
+    procedure pnp_logoutClick(Sender: TObject);
     procedure pnp_avaliaçãoClick(Sender: TObject);
+    procedure pnp_procura_avaliacaoClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -38,18 +40,25 @@ implementation
 {$R *.dfm}
 
 uses unt_servico, unt_cad_agendam, unt_pagamento,
-  unt_login, unt_cadastrar_alunos, unt_aluno, unt_avaliacao, unt_dtm;
+  unt_login, unt_cadastrar_alunos, unt_aluno, unt_avaliacao, unt_dtm,
+  unt_procura_avaliacao;
 
-procedure Tfrm_principal.Panel2Click(Sender: TObject);
+procedure Tfrm_principal.pnp_cadastrar_alunosClick(Sender: TObject);
 begin
 frm_cadastrar_alunos:=Tfrm_cadastrar_alunos.Create(self);
 frm_cadastrar_alunos.Show;
 end;
 
-procedure Tfrm_principal.Panel3Click(Sender: TObject);
+procedure Tfrm_principal.pnp_logoutClick(Sender: TObject);
 begin
 frm_login:=Tfrm_login.Create(self);
 frm_login.Show;
+end;
+
+procedure Tfrm_principal.pnp_procura_avaliacaoClick(Sender: TObject);
+begin
+frm_procura_avaliacao:=Tfrm_procura_avaliacao.Create(self);
+frm_procura_avaliacao.Show;
 end;
 
 procedure Tfrm_principal.pnp_alunosClick(Sender: TObject);

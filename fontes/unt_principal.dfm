@@ -2,7 +2,7 @@
   Left = 0
   Top = 0
   Caption = 'Home'
-  ClientHeight = 561
+  ClientHeight = 644
   ClientWidth = 758
   Color = clBtnHighlight
   Font.Charset = DEFAULT_CHARSET
@@ -18,7 +18,7 @@
     Left = 0
     Top = 41
     Width = 225
-    Height = 520
+    Height = 603
     Align = alLeft
     BevelOuter = bvNone
     Color = 7841023
@@ -63,7 +63,7 @@
     end
     object pnp_agendamentos: TPanel
       Left = 16
-      Top = 112
+      Top = 107
       Width = 193
       Height = 44
       Cursor = crHandPoint
@@ -81,7 +81,7 @@
     end
     object pnp_serviços: TPanel
       Left = 16
-      Top = 340
+      Top = 377
       Width = 193
       Height = 44
       Cursor = crHandPoint
@@ -100,7 +100,7 @@
     end
     object pnp_cadastros: TPanel
       Left = 0
-      Top = 176
+      Top = 217
       Width = 225
       Height = 43
       BevelOuter = bvNone
@@ -117,7 +117,7 @@
     end
     object pnp_cadastro_agendamentos: TPanel
       Left = 16
-      Top = 285
+      Top = 323
       Width = 193
       Height = 44
       Cursor = crHandPoint
@@ -133,9 +133,9 @@
       ParentFont = False
       TabOrder = 5
     end
-    object Panel2: TPanel
+    object pnp_cadastrar_alunos: TPanel
       Left = 16
-      Top = 230
+      Top = 270
       Width = 193
       Height = 44
       Cursor = crHandPoint
@@ -150,11 +150,11 @@
       ParentBackground = False
       ParentFont = False
       TabOrder = 6
-      OnClick = Panel2Click
+      OnClick = pnp_cadastrar_alunosClick
     end
-    object Panel3: TPanel
+    object pnp_logout: TPanel
       Left = 16
-      Top = 464
+      Top = 528
       Width = 193
       Height = 41
       Cursor = crHandPoint
@@ -170,11 +170,11 @@
       ParentBackground = False
       ParentFont = False
       TabOrder = 7
-      OnClick = Panel3Click
+      OnClick = pnp_logoutClick
     end
     object pnp_avaliação: TPanel
       Left = 16
-      Top = 398
+      Top = 430
       Width = 193
       Height = 43
       Cursor = crHandPoint
@@ -191,6 +191,25 @@
       ParentFont = False
       TabOrder = 8
       OnClick = pnp_avaliaçãoClick
+    end
+    object pnp_procura_avaliacao: TPanel
+      Left = 16
+      Top = 161
+      Width = 193
+      Height = 43
+      Cursor = crHandPoint
+      BevelOuter = bvNone
+      Caption = 'Procurar Avalia'#231#245'es'
+      Color = 10797567
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentBackground = False
+      ParentFont = False
+      TabOrder = 9
+      OnClick = pnp_procura_avaliacaoClick
     end
   end
   object pnp_titulo: TPanel

@@ -711,8 +711,10 @@ object frm_avaliacao: Tfrm_avaliacao
     Top = 93
     Width = 194
     Height = 158
-    Date = 43987.000000000000000000
-    TabOrder = 11
+    Cursor = crHandPoint
+    Date = 43999.000000000000000000
+    MinDate = 40179.000000000000000000
+    TabOrder = 14
     Visible = False
     OnClick = calendarioClick
   end
@@ -723,7 +725,7 @@ object frm_avaliacao: Tfrm_avaliacao
     Height = 53
     DataField = 'queixa'
     DataSource = dtm.ds_avaliacao
-    TabOrder = 0
+    TabOrder = 6
   end
   object mm_habitos: TDBMemo
     Left = 64
@@ -732,7 +734,7 @@ object frm_avaliacao: Tfrm_avaliacao
     Height = 53
     DataField = 'habitos'
     DataSource = dtm.ds_avaliacao
-    TabOrder = 1
+    TabOrder = 3
   end
   object mm_doenca: TDBMemo
     Left = 64
@@ -741,7 +743,7 @@ object frm_avaliacao: Tfrm_avaliacao
     Height = 53
     DataField = 'doenca'
     DataSource = dtm.ds_avaliacao
-    TabOrder = 2
+    TabOrder = 4
   end
   object mm_antecedentes: TDBMemo
     Left = 328
@@ -750,7 +752,7 @@ object frm_avaliacao: Tfrm_avaliacao
     Height = 53
     DataField = 'antecedentes'
     DataSource = dtm.ds_avaliacao
-    TabOrder = 3
+    TabOrder = 8
   end
   object mm_tratamento: TDBMemo
     Left = 64
@@ -759,7 +761,7 @@ object frm_avaliacao: Tfrm_avaliacao
     Height = 53
     DataField = 'tratamento'
     DataSource = dtm.ds_avaliacao
-    TabOrder = 4
+    TabOrder = 5
   end
   object edt_dor_mov: TDBEdit
     Left = 328
@@ -768,7 +770,7 @@ object frm_avaliacao: Tfrm_avaliacao
     Height = 21
     DataField = 'dor_mov'
     DataSource = dtm.ds_avaliacao
-    TabOrder = 5
+    TabOrder = 9
   end
   object edt_cirurgias: TDBEdit
     Left = 592
@@ -777,7 +779,7 @@ object frm_avaliacao: Tfrm_avaliacao
     Height = 21
     DataField = 'cirurgias'
     DataSource = dtm.ds_avaliacao
-    TabOrder = 6
+    TabOrder = 12
   end
   object mm_posicoes: TDBMemo
     Left = 328
@@ -795,7 +797,7 @@ object frm_avaliacao: Tfrm_avaliacao
     Height = 21
     DataField = 'exer_ativi'
     DataSource = dtm.ds_avaliacao
-    TabOrder = 8
+    TabOrder = 10
   end
   object edt_objetivo: TDBEdit
     Left = 592
@@ -804,7 +806,7 @@ object frm_avaliacao: Tfrm_avaliacao
     Height = 21
     DataField = 'objetivos'
     DataSource = dtm.ds_avaliacao
-    TabOrder = 9
+    TabOrder = 11
   end
   object btn_calendario: TButton
     Left = 175
@@ -812,7 +814,7 @@ object frm_avaliacao: Tfrm_avaliacao
     Width = 66
     Height = 25
     Caption = 'Calend'#225'rio'
-    TabOrder = 10
+    TabOrder = 1
     OnClick = btn_calendarioClick
   end
   object Escolher_aluno: TDBLookupComboBox
@@ -825,12 +827,12 @@ object frm_avaliacao: Tfrm_avaliacao
     KeyField = 'id_aluno'
     ListField = 'nome_aluno'
     ListSource = dtm.ds_alunos
-    TabOrder = 12
+    TabOrder = 2
   end
   object DBGrid1: TDBGrid
-    Left = 64
+    Left = 260
     Top = 484
-    Width = 705
+    Width = 325
     Height = 120
     DataSource = dtm.ds_avaliacao
     Options = [dgTitles, dgIndicator, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
@@ -842,18 +844,28 @@ object frm_avaliacao: Tfrm_avaliacao
     TitleFont.Style = []
     Columns = <
       item
+        Alignment = taCenter
         Expanded = False
         FieldName = 'idavaliacao'
+        Title.Alignment = taCenter
+        Title.Caption = 'C'#243'digo da Avalia'#231#227'o'
         Visible = True
       end
       item
+        Alignment = taCenter
         Expanded = False
         FieldName = 'data_avaliacao'
+        Title.Alignment = taCenter
+        Title.Caption = 'Data da Avalia'#231#227'o'
         Visible = True
       end
       item
+        Alignment = taCenter
         Expanded = False
         FieldName = 'new_aluno'
+        Title.Alignment = taCenter
+        Title.Caption = 'Nome Aluno'
+        Width = 110
         Visible = True
       end>
   end
@@ -864,7 +876,7 @@ object frm_avaliacao: Tfrm_avaliacao
     Height = 21
     DataField = 'data_avaliacao'
     DataSource = dtm.ds_avaliacao
-    TabOrder = 14
+    TabOrder = 0
   end
   object ActionManager1: TActionManager
     Top = 48

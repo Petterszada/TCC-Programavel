@@ -109,8 +109,7 @@ object dtm: Tdtm
       FieldName = 'cpf'
       Origin = 'cpf'
       Required = True
-      EditMask = '000.000.000-00;1;_'
-      Size = 15
+      Size = 12
     end
     object alunosemail: TStringField
       FieldName = 'email'
@@ -143,7 +142,6 @@ object dtm: Tdtm
     Top = 160
   end
   object avaliacao: TFDQuery
-    Active = True
     Connection = conexao
     SQL.Strings = (
       'select * from avaliacao')
