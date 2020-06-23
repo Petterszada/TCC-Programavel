@@ -14,7 +14,7 @@ type
     Label2: TLabel;
     edit_desc: TDBEdit;
     Label3: TLabel;
-    edit_valor: TDBEdit;
+    edt_valor: TDBEdit;
     ActionManager1: TActionManager;
     DatasetInsert1: TDataSetInsert;
     DatasetDelete1: TDataSetDelete;
@@ -32,6 +32,10 @@ type
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
 //    procedure btn_salvarClick(Sender: TObject);
     procedure btn_deleteClick(Sender: TObject);
+    procedure edt_valorEnter(Sender: TObject);
+    procedure edt_valorExit(Sender: TObject);
+    procedure edt_valorStartDock(Sender: TObject;
+      var DragObject: TDragDockObject);
   private
     { Private declarations }
   public
@@ -61,6 +65,22 @@ if MessageDlg('Deseja mesmo deletar o Serviço ?', MtConfirmation, [Mbyes, MbNo],
 
   end;
 
+end;
+
+procedure Tfrm_servico.edt_valorEnter(Sender: TObject);
+begin
+  edt_valor.Text:=formatfloat('#,##0.00', 0.00)
+end;
+
+procedure Tfrm_servico.edt_valorExit(Sender: TObject);
+begin
+  edt_valor.Text:=formatfloat('#,##0.00', 0.00)
+end;
+
+procedure Tfrm_servico.edt_valorStartDock(Sender: TObject;
+  var DragObject: TDragDockObject);
+begin
+  edt_valor.Text:=formatfloat('#,##0.00', 0.00)
 end;
 
 procedure Tfrm_servico.FormClose(Sender: TObject; var Action: TCloseAction);

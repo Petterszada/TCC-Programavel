@@ -29,7 +29,7 @@ object frm_servico: Tfrm_servico
     Width = 24
     Height = 13
     Caption = 'Valor'
-    FocusControl = edit_valor
+    FocusControl = edt_valor
   end
   object btn_inserir: TSpeedButton
     Left = 106
@@ -645,14 +645,18 @@ object frm_servico: Tfrm_servico
     DataSource = dtm.ds_servicos
     TabOrder = 0
   end
-  object edit_valor: TDBEdit
+  object edt_valor: TDBEdit
     Left = 311
     Top = 125
     Width = 70
     Height = 21
+    AutoSize = False
     DataField = 'valor_servico'
     DataSource = dtm.ds_servicos
     TabOrder = 2
+    OnEnter = edt_valorEnter
+    OnExit = edt_valorExit
+    OnStartDock = edt_valorStartDock
   end
   object DBGrid1: TDBGrid
     Left = 200
