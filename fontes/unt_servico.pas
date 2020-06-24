@@ -30,12 +30,7 @@ type
     Label1: TLabel;
     DBEdit1: TDBEdit;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
-//    procedure btn_salvarClick(Sender: TObject);
     procedure btn_deleteClick(Sender: TObject);
-    procedure edt_valorEnter(Sender: TObject);
-    procedure edt_valorExit(Sender: TObject);
-    procedure edt_valorStartDock(Sender: TObject;
-      var DragObject: TDragDockObject);
   private
     { Private declarations }
   public
@@ -67,22 +62,6 @@ if MessageDlg('Deseja mesmo deletar o Serviço ?', MtConfirmation, [Mbyes, MbNo],
 
 end;
 
-procedure Tfrm_servico.edt_valorEnter(Sender: TObject);
-begin
-  edt_valor.Text:=formatfloat('#,##0.00', 0.00)
-end;
-
-procedure Tfrm_servico.edt_valorExit(Sender: TObject);
-begin
-  edt_valor.Text:=formatfloat('#,##0.00', 0.00)
-end;
-
-procedure Tfrm_servico.edt_valorStartDock(Sender: TObject;
-  var DragObject: TDragDockObject);
-begin
-  edt_valor.Text:=formatfloat('#,##0.00', 0.00)
-end;
-
 procedure Tfrm_servico.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
 if cad='sim' then
@@ -97,34 +76,6 @@ begin
 
 end;
 end;
-
-//procedure Tfrm_servico.btn_salvarClick(Sender: TObject);
-//begin
-//if edit_desc.Text='' then
-
-//begin
-  //ShowMessage('o campo Descrição não pode ficar em branco');
- // edit_desc.Color:=clRed;
- // edit_desc.SetFocus;
-
-//end
-//else
-//begin
-//edit_desc.Color:=clWhite
-//end;
-
-//if edit_valor.Text='' then
-//begin
-//  ShowMessage('o campo Valor não pode ficar em branco');
-//  edit_valor.Color:=clRed;
-//  edit_valor.SetFocus;
-//end
-//else
-//begin
-//edit_valor.Color:=clWhite
-//end;
-//end;
-
 
 
 

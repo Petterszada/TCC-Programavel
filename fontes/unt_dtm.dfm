@@ -51,6 +51,7 @@ object dtm: Tdtm
       FieldName = 'valor_servico'
       Origin = 'valor_servico'
       Required = True
+      currency = True
       MaxValue = 999.990000000000000000
       MinValue = 1.000000000000000000
       Precision = 8
@@ -59,7 +60,6 @@ object dtm: Tdtm
     object servicosobservacao: TStringField
       FieldName = 'observacao'
       Origin = 'observacao'
-      Required = True
       Size = 45
     end
   end
@@ -82,42 +82,49 @@ object dtm: Tdtm
     Left = 96
     Top = 104
     object alunosid_aluno: TFDAutoIncField
+      DisplayWidth = 10
       FieldName = 'id_aluno'
       Origin = 'id_aluno'
       ProviderFlags = [pfInWhere, pfInKey]
       ReadOnly = True
     end
     object alunosnome_aluno: TStringField
+      DisplayWidth = 33
       FieldName = 'nome_aluno'
       Origin = 'nome_aluno'
       Required = True
       Size = 45
     end
     object alunossobrenome_aluno: TStringField
+      DisplayWidth = 19
       FieldName = 'sobrenome_aluno'
       Origin = 'sobrenome_aluno'
       Required = True
       Size = 45
     end
     object alunosdata_nasc: TDateField
+      DisplayWidth = 10
       FieldName = 'data_nasc'
       Origin = 'data_nasc'
       Required = True
       EditMask = '!99/99/0000;1;_'
     end
     object alunoscpf: TStringField
+      DisplayWidth = 12
       FieldName = 'cpf'
       Origin = 'cpf'
       Required = True
       Size = 12
     end
     object alunosemail: TStringField
+      DisplayWidth = 45
       FieldName = 'email'
       Origin = 'email'
       Required = True
       Size = 45
     end
     object alunossexo: TStringField
+      DisplayWidth = 9
       FieldName = 'sexo'
       Origin = 'sexo'
       Required = True
@@ -125,12 +132,14 @@ object dtm: Tdtm
       Size = 9
     end
     object alunosprofissao: TStringField
+      DisplayWidth = 45
       FieldName = 'profissao'
       Origin = 'profissao'
       Required = True
       Size = 45
     end
     object alunosservico: TIntegerField
+      DisplayWidth = 10
       FieldName = 'servico'
       Origin = 'servico'
       Required = True
@@ -142,7 +151,9 @@ object dtm: Tdtm
     Top = 160
   end
   object avaliacao: TFDQuery
+    Active = True
     Connection = conexao
+    UpdateOptions.AssignedValues = [uvEDelete, uvEInsert, uvEUpdate, uvUpdateMode]
     SQL.Strings = (
       'select * from avaliacao')
     Left = 176
@@ -238,6 +249,80 @@ object dtm: Tdtm
   object ds_avaliacao: TDataSource
     DataSet = avaliacao
     Left = 176
+    Top = 160
+  end
+  object busca_alunos: TFDQuery
+    Active = True
+    Connection = conexao
+    SQL.Strings = (
+      'SELECT * FROM aluno where nome_aluno like :aluno')
+    Left = 248
+    Top = 104
+    ParamData = <
+      item
+        Name = 'ALUNO'
+        DataType = ftString
+        ParamType = ptInput
+        Size = 100
+        Value = Null
+      end>
+    object busca_alunosid_aluno: TFDAutoIncField
+      FieldName = 'id_aluno'
+      Origin = 'id_aluno'
+      ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
+    end
+    object busca_alunosnome_aluno: TStringField
+      FieldName = 'nome_aluno'
+      Origin = 'nome_aluno'
+      Required = True
+      Size = 45
+    end
+    object busca_alunossobrenome_aluno: TStringField
+      FieldName = 'sobrenome_aluno'
+      Origin = 'sobrenome_aluno'
+      Required = True
+      Size = 45
+    end
+    object busca_alunosdata_nasc: TDateField
+      FieldName = 'data_nasc'
+      Origin = 'data_nasc'
+      Required = True
+    end
+    object busca_alunoscpf: TStringField
+      FieldName = 'cpf'
+      Origin = 'cpf'
+      Required = True
+      Size = 12
+    end
+    object busca_alunosemail: TStringField
+      FieldName = 'email'
+      Origin = 'email'
+      Required = True
+      Size = 45
+    end
+    object busca_alunossexo: TStringField
+      FieldName = 'sexo'
+      Origin = 'sexo'
+      Required = True
+      FixedChar = True
+      Size = 9
+    end
+    object busca_alunosprofissao: TStringField
+      FieldName = 'profissao'
+      Origin = 'profissao'
+      Required = True
+      Size = 45
+    end
+    object busca_alunosservico: TIntegerField
+      FieldName = 'servico'
+      Origin = 'servico'
+      Required = True
+    end
+  end
+  object ds_busca_alunos: TDataSource
+    DataSet = busca_alunos
+    Left = 248
     Top = 160
   end
 end

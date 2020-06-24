@@ -35,7 +35,6 @@ type
     edt_objetivo: TDBEdit;
     btn_calendario: TButton;
     calendario: TMonthCalendar;
-    Escolher_aluno: TDBLookupComboBox;
     btn_cancelar: TSpeedButton;
     btn_editar: TSpeedButton;
     btn_inserir: TSpeedButton;
@@ -49,10 +48,12 @@ type
     DatasetCancel1: TDataSetCancel;
     DBGrid1: TDBGrid;
     edt_selecione: TDBEdit;
+    edt_aluno: TDBEdit;
     procedure btn_calendarioClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure calendarioClick(Sender: TObject);
     procedure btn_deletarClick(Sender: TObject);
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
   private
     { Private declarations }
   public
@@ -67,7 +68,8 @@ implementation
 
 {$R *.dfm}
 
-uses unt_dtm;
+uses unt_dtm, unt_procura_avaliacao, unt_aluno, unt_cad_agendam,
+  unt_cadastrar_alunos, unt_login, unt_pagamento, unt_principal, unt_servico;
 
 procedure Tfrm_avaliacao.btn_calendarioClick(Sender: TObject);
 begin
@@ -91,6 +93,14 @@ end;
 procedure Tfrm_avaliacao.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
 Action:=caFree;
+end;
+
+procedure Tfrm_avaliacao.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+if key = VK_F3 then
+frm_procura_avaliacao:=Tfrm_procura_avaliacao.Create(self);
+frm_procura_avaliacao.Show;
 end;
 
 end.

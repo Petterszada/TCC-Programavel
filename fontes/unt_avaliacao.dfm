@@ -10,9 +10,11 @@ object frm_avaliacao: Tfrm_avaliacao
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
+  KeyPreview = True
   OldCreateOrder = False
   Position = poDesktopCenter
   OnClose = FormClose
+  OnKeyDown = FormKeyDown
   PixelsPerInch = 96
   TextHeight = 13
   object lbl_data: TLabel
@@ -21,13 +23,6 @@ object frm_avaliacao: Tfrm_avaliacao
     Width = 87
     Height = 13
     Caption = 'Data da Avalia'#231#227'o'
-  end
-  object lbl_aluno: TLabel
-    Left = 64
-    Top = 93
-    Width = 75
-    Height = 13
-    Caption = 'Escolha o Aluno'
   end
   object lbl_queixa: TLabel
     Left = 329
@@ -706,15 +701,22 @@ object frm_avaliacao: Tfrm_avaliacao
     NumGlyphs = 2
     OnClick = btn_deletarClick
   end
-  object calendario: TMonthCalendar
-    Left = 175
+  object lbl_aluno: TLabel
+    Left = 64
     Top = 93
-    Width = 194
+    Width = 162
+    Height = 13
+    Caption = 'Aperte F3 para selecionar o aluno'
+  end
+  object calendario: TMonthCalendar
+    Left = 184
+    Top = 93
+    Width = 176
     Height = 158
     Cursor = crHandPoint
     Date = 43999.000000000000000000
     MinDate = 40179.000000000000000000
-    TabOrder = 14
+    TabOrder = 13
     Visible = False
     OnClick = calendarioClick
   end
@@ -725,7 +727,7 @@ object frm_avaliacao: Tfrm_avaliacao
     Height = 53
     DataField = 'queixa'
     DataSource = dtm.ds_avaliacao
-    TabOrder = 6
+    TabOrder = 5
   end
   object mm_habitos: TDBMemo
     Left = 64
@@ -734,7 +736,7 @@ object frm_avaliacao: Tfrm_avaliacao
     Height = 53
     DataField = 'habitos'
     DataSource = dtm.ds_avaliacao
-    TabOrder = 3
+    TabOrder = 2
   end
   object mm_doenca: TDBMemo
     Left = 64
@@ -743,7 +745,7 @@ object frm_avaliacao: Tfrm_avaliacao
     Height = 53
     DataField = 'doenca'
     DataSource = dtm.ds_avaliacao
-    TabOrder = 4
+    TabOrder = 3
   end
   object mm_antecedentes: TDBMemo
     Left = 328
@@ -752,7 +754,7 @@ object frm_avaliacao: Tfrm_avaliacao
     Height = 53
     DataField = 'antecedentes'
     DataSource = dtm.ds_avaliacao
-    TabOrder = 8
+    TabOrder = 7
   end
   object mm_tratamento: TDBMemo
     Left = 64
@@ -761,7 +763,7 @@ object frm_avaliacao: Tfrm_avaliacao
     Height = 53
     DataField = 'tratamento'
     DataSource = dtm.ds_avaliacao
-    TabOrder = 5
+    TabOrder = 4
   end
   object edt_dor_mov: TDBEdit
     Left = 328
@@ -770,7 +772,7 @@ object frm_avaliacao: Tfrm_avaliacao
     Height = 21
     DataField = 'dor_mov'
     DataSource = dtm.ds_avaliacao
-    TabOrder = 9
+    TabOrder = 8
   end
   object edt_cirurgias: TDBEdit
     Left = 592
@@ -779,7 +781,7 @@ object frm_avaliacao: Tfrm_avaliacao
     Height = 21
     DataField = 'cirurgias'
     DataSource = dtm.ds_avaliacao
-    TabOrder = 12
+    TabOrder = 11
   end
   object mm_posicoes: TDBMemo
     Left = 328
@@ -788,7 +790,7 @@ object frm_avaliacao: Tfrm_avaliacao
     Height = 53
     DataField = 'posicoes'
     DataSource = dtm.ds_avaliacao
-    TabOrder = 7
+    TabOrder = 6
   end
   object edt_exer_ativ: TDBEdit
     Left = 592
@@ -797,7 +799,7 @@ object frm_avaliacao: Tfrm_avaliacao
     Height = 21
     DataField = 'exer_ativi'
     DataSource = dtm.ds_avaliacao
-    TabOrder = 10
+    TabOrder = 9
   end
   object edt_objetivo: TDBEdit
     Left = 592
@@ -806,7 +808,7 @@ object frm_avaliacao: Tfrm_avaliacao
     Height = 21
     DataField = 'objetivos'
     DataSource = dtm.ds_avaliacao
-    TabOrder = 11
+    TabOrder = 10
   end
   object btn_calendario: TButton
     Left = 175
@@ -817,26 +819,14 @@ object frm_avaliacao: Tfrm_avaliacao
     TabOrder = 1
     OnClick = btn_calendarioClick
   end
-  object Escolher_aluno: TDBLookupComboBox
-    Left = 64
-    Top = 108
-    Width = 177
-    Height = 21
-    DataField = 'aluno'
-    DataSource = dtm.ds_avaliacao
-    KeyField = 'id_aluno'
-    ListField = 'nome_aluno'
-    ListSource = dtm.ds_alunos
-    TabOrder = 2
-  end
   object DBGrid1: TDBGrid
     Left = 260
     Top = 484
-    Width = 325
+    Width = 301
     Height = 120
     DataSource = dtm.ds_avaliacao
     Options = [dgTitles, dgIndicator, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
-    TabOrder = 13
+    TabOrder = 12
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -11
@@ -877,6 +867,17 @@ object frm_avaliacao: Tfrm_avaliacao
     DataField = 'data_avaliacao'
     DataSource = dtm.ds_avaliacao
     TabOrder = 0
+  end
+  object edt_aluno: TDBEdit
+    Left = 64
+    Top = 108
+    Width = 177
+    Height = 21
+    Ctl3D = True
+    DataField = 'aluno'
+    DataSource = dtm.ds_avaliacao
+    ParentCtl3D = False
+    TabOrder = 14
   end
   object ActionManager1: TActionManager
     Top = 48

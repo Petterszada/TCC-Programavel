@@ -192,25 +192,6 @@
       TabOrder = 8
       OnClick = pnp_avaliaçãoClick
     end
-    object pnp_procura_avaliacao: TPanel
-      Left = 16
-      Top = 161
-      Width = 193
-      Height = 43
-      Cursor = crHandPoint
-      BevelOuter = bvNone
-      Caption = 'Procurar Avalia'#231#245'es'
-      Color = 10797567
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -16
-      Font.Name = 'Tahoma'
-      Font.Style = []
-      ParentBackground = False
-      ParentFont = False
-      TabOrder = 9
-      OnClick = pnp_procura_avaliacaoClick
-    end
   end
   object pnp_titulo: TPanel
     Left = 0

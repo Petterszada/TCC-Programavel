@@ -19,7 +19,6 @@ type
     pnp_cadastrar_alunos: TPanel;
     pnp_logout: TPanel;
     pnp_avaliação: TPanel;
-    pnp_procura_avaliacao: TPanel;
     procedure pnp_alunosClick(Sender: TObject);
     procedure pnp_serviçosClick(Sender: TObject);
     procedure pnp_cadastrar_alunosClick(Sender: TObject);

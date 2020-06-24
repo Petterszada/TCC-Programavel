@@ -49,6 +49,17 @@ type
     alunossexo: TStringField;
     alunosprofissao: TStringField;
     alunosservico: TIntegerField;
+    busca_alunos: TFDQuery;
+    ds_busca_alunos: TDataSource;
+    busca_alunosid_aluno: TFDAutoIncField;
+    busca_alunosnome_aluno: TStringField;
+    busca_alunossobrenome_aluno: TStringField;
+    busca_alunosdata_nasc: TDateField;
+    busca_alunoscpf: TStringField;
+    busca_alunosemail: TStringField;
+    busca_alunossexo: TStringField;
+    busca_alunosprofissao: TStringField;
+    busca_alunosservico: TIntegerField;
     procedure servicosAfterCancel(DataSet: TDataSet);
     procedure servicosAfterPost(DataSet: TDataSet);
     procedure servicosBeforeEdit(DataSet: TDataSet);

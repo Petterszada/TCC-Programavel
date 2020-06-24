@@ -654,9 +654,6 @@ object frm_servico: Tfrm_servico
     DataField = 'valor_servico'
     DataSource = dtm.ds_servicos
     TabOrder = 2
-    OnEnter = edt_valorEnter
-    OnExit = edt_valorExit
-    OnStartDock = edt_valorStartDock
   end
   object DBGrid1: TDBGrid
     Left = 200
