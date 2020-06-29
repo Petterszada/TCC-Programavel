@@ -3,7 +3,7 @@
   Top = 0
   Caption = 'Home'
   ClientHeight = 644
-  ClientWidth = 758
+  ClientWidth = 757
   Color = clBtnHighlight
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -24,6 +24,7 @@
     Color = 7841023
     ParentBackground = False
     TabOrder = 0
+    ExplicitTop = 47
     object pnp_consultar: TPanel
       Left = 0
       Top = 0
@@ -81,7 +82,7 @@
     end
     object pnp_serviços: TPanel
       Left = 16
-      Top = 377
+      Top = 323
       Width = 193
       Height = 44
       Cursor = crHandPoint
@@ -100,7 +101,7 @@
     end
     object pnp_cadastros: TPanel
       Left = 0
-      Top = 217
+      Top = 161
       Width = 225
       Height = 43
       BevelOuter = bvNone
@@ -117,7 +118,7 @@
     end
     object pnp_cadastro_agendamentos: TPanel
       Left = 16
-      Top = 323
+      Top = 268
       Width = 193
       Height = 44
       Cursor = crHandPoint
@@ -132,10 +133,11 @@
       ParentBackground = False
       ParentFont = False
       TabOrder = 5
+      OnClick = pnp_cadastro_agendamentosClick
     end
     object pnp_cadastrar_alunos: TPanel
       Left = 16
-      Top = 270
+      Top = 214
       Width = 193
       Height = 44
       Cursor = crHandPoint
@@ -174,7 +176,7 @@
     end
     object pnp_avaliação: TPanel
       Left = 16
-      Top = 430
+      Top = 377
       Width = 193
       Height = 43
       Cursor = crHandPoint
@@ -196,7 +198,7 @@
   object pnp_titulo: TPanel
     Left = 0
     Top = 0
-    Width = 758
+    Width = 757
     Height = 41
     Align = alTop
     BevelOuter = bvNone

@@ -1,0 +1,119 @@
+object frm_aluno: Tfrm_aluno
+  Left = 0
+  Top = 0
+  Caption = 'Alunos'
+  ClientHeight = 402
+  ClientWidth = 768
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  OnClose = FormClose
+  PixelsPerInch = 96
+  TextHeight = 13
+  object lnl_nome_aluno: TLabel
+    Left = 192
+    Top = 45
+    Width = 110
+    Height = 13
+    Caption = 'Digite o nome do Aluno'
+  end
+  object edt_selecionar_aluno: TEdit
+    Left = 192
+    Top = 64
+    Width = 233
+    Height = 21
+    TabOrder = 0
+  end
+  object DBGrid1: TDBGrid
+    Left = 104
+    Top = 144
+    Width = 609
+    Height = 96
+    DataSource = dtm.ds_consulta_alunos
+    Options = [dgTitles, dgIndicator, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+    TabOrder = 1
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Alignment = taCenter
+        Expanded = False
+        FieldName = 'id_aluno'
+        Title.Alignment = taCenter
+        Title.Caption = 'ID Aluno'
+        Visible = True
+      end
+      item
+        Alignment = taCenter
+        Expanded = False
+        FieldName = 'nome_aluno'
+        Title.Alignment = taCenter
+        Title.Caption = 'Nome'
+        Visible = True
+      end
+      item
+        Alignment = taCenter
+        Expanded = False
+        FieldName = 'sobrenome_aluno'
+        Title.Alignment = taCenter
+        Title.Caption = 'Sobrenome'
+        Visible = True
+      end
+      item
+        Alignment = taCenter
+        Expanded = False
+        FieldName = 'data_nasc'
+        Title.Alignment = taCenter
+        Title.Caption = 'Data Nascimento'
+        Visible = True
+      end
+      item
+        Alignment = taCenter
+        Expanded = False
+        FieldName = 'cpf'
+        Title.Alignment = taCenter
+        Title.Caption = 'CPF'
+        Visible = True
+      end
+      item
+        Alignment = taCenter
+        Expanded = False
+        FieldName = 'email'
+        Title.Alignment = taCenter
+        Title.Caption = 'E-mail'
+        Visible = True
+      end
+      item
+        Alignment = taCenter
+        Expanded = False
+        FieldName = 'sexo'
+        Title.Alignment = taCenter
+        Title.Caption = 'Sexo'
+        Visible = True
+      end
+      item
+        Alignment = taCenter
+        Expanded = False
+        FieldName = 'profissao'
+        Title.Alignment = taCenter
+        Title.Caption = 'Profiss'#227'o'
+        Visible = True
+      end
+      item
+        Alignment = taCenter
+        Expanded = False
+        FieldName = 'servico'
+        Title.Alignment = taCenter
+        Title.Caption = 'Servi'#231'o'
+        Visible = True
+      end>
+  end
+end

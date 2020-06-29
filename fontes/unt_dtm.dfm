@@ -256,7 +256,7 @@ object dtm: Tdtm
     Connection = conexao
     SQL.Strings = (
       'SELECT * FROM aluno where nome_aluno like :aluno')
-    Left = 248
+    Left = 256
     Top = 104
     ParamData = <
       item
@@ -322,7 +322,28 @@ object dtm: Tdtm
   end
   object ds_busca_alunos: TDataSource
     DataSet = busca_alunos
-    Left = 248
+    Left = 256
+    Top = 160
+  end
+  object consulta_alunos: TFDQuery
+    Active = True
+    Connection = conexao
+    SQL.Strings = (
+      'SELECT * FROM aluno where nome_aluno like :aluno')
+    Left = 352
+    Top = 104
+    ParamData = <
+      item
+        Name = 'ALUNO'
+        DataType = ftString
+        ParamType = ptInput
+        Size = 100
+        Value = Null
+      end>
+  end
+  object ds_consulta_alunos: TDataSource
+    DataSet = consulta_alunos
+    Left = 352
     Top = 160
   end
 end

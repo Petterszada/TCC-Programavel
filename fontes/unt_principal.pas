@@ -25,6 +25,7 @@ type
     procedure pnp_logoutClick(Sender: TObject);
     procedure pnp_avaliaçãoClick(Sender: TObject);
     procedure pnp_procura_avaliacaoClick(Sender: TObject);
+    procedure pnp_cadastro_agendamentosClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -46,6 +47,12 @@ procedure Tfrm_principal.pnp_cadastrar_alunosClick(Sender: TObject);
 begin
 frm_cadastrar_alunos:=Tfrm_cadastrar_alunos.Create(self);
 frm_cadastrar_alunos.Show;
+end;
+
+procedure Tfrm_principal.pnp_cadastro_agendamentosClick(Sender: TObject);
+begin
+frm_cadastrar_agendamentos:=Tfrm_cadastrar_agendamentos.Create(self);
+frm_cadastrar_agendamentos.Show;
 end;
 
 procedure Tfrm_principal.pnp_logoutClick(Sender: TObject);

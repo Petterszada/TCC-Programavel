@@ -120,7 +120,7 @@
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="fontes\unt_cad_agendam.pas">
-            <Form>frm_agendam</Form>
+            <Form>frm_cadastrar_agendamentos</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="fontes\unt_aluno.pas">

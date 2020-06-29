@@ -143,9 +143,9 @@ object frm_procura_avaliacao: Tfrm_procura_avaliacao
     OnKeyPress = edt_busca_alunoKeyPress
   end
   object DBGrid1: TDBGrid
-    Left = 72
+    Left = 152
     Top = 104
-    Width = 545
+    Width = 345
     Height = 120
     DataSource = dtm.ds_busca_alunos
     Options = [dgTitles, dgIndicator, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
@@ -180,24 +180,6 @@ object frm_procura_avaliacao: Tfrm_procura_avaliacao
         Title.Alignment = taCenter
         Title.Caption = 'Sobrenome'
         Width = 141
-        Visible = True
-      end
-      item
-        Alignment = taCenter
-        Expanded = False
-        FieldName = 'cpf'
-        Title.Alignment = taCenter
-        Title.Caption = 'CPF'
-        Width = 101
-        Visible = True
-      end
-      item
-        Alignment = taCenter
-        Expanded = False
-        FieldName = 'sexo'
-        Title.Alignment = taCenter
-        Title.Caption = 'Sexo'
-        Width = 97
         Visible = True
       end>
   end

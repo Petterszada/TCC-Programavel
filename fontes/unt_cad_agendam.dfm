@@ -1,4 +1,4 @@
-object frm_agendam: Tfrm_agendam
+object frm_cadastrar_agendamentos: Tfrm_cadastrar_agendamentos
   Left = 0
   Top = 0
   Caption = 'Agendamentos'

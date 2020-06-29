@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs;
 
 type
-  Tfrm_agendam = class(TForm)
+  Tfrm_cadastrar_agendamentos = class(TForm)
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
@@ -16,13 +16,13 @@ type
   end;
 
 var
-  frm_agendam: Tfrm_agendam;
+  frm_cadastrar_agendamentos: Tfrm_cadastrar_agendamentos;
 
 implementation
 
 {$R *.dfm}
 
-procedure Tfrm_agendam.FormClose(Sender: TObject; var Action: TCloseAction);
+procedure Tfrm_cadastrar_agendamentos.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
 Action:=caFree;
 end;

@@ -60,6 +60,8 @@ type
     busca_alunossexo: TStringField;
     busca_alunosprofissao: TStringField;
     busca_alunosservico: TIntegerField;
+    consulta_alunos: TFDQuery;
+    ds_consulta_alunos: TDataSource;
     procedure servicosAfterCancel(DataSet: TDataSet);
     procedure servicosAfterPost(DataSet: TDataSet);
     procedure servicosBeforeEdit(DataSet: TDataSet);
