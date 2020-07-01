@@ -709,8 +709,8 @@ object frm_avaliacao: Tfrm_avaliacao
     Caption = 'Aperte F3 para selecionar o aluno'
   end
   object calendario: TMonthCalendar
-    Left = 184
-    Top = 93
+    Left = 147
+    Top = 112
     Width = 176
     Height = 158
     Cursor = crHandPoint
@@ -769,7 +769,7 @@ object frm_avaliacao: Tfrm_avaliacao
     Left = 328
     Top = 309
     Width = 177
-    Height = 21
+    Height = 53
     DataField = 'dor_mov'
     DataSource = dtm.ds_avaliacao
     TabOrder = 8
@@ -778,7 +778,7 @@ object frm_avaliacao: Tfrm_avaliacao
     Left = 592
     Top = 231
     Width = 177
-    Height = 21
+    Height = 53
     DataField = 'cirurgias'
     DataSource = dtm.ds_avaliacao
     TabOrder = 11
@@ -796,7 +796,7 @@ object frm_avaliacao: Tfrm_avaliacao
     Left = 592
     Top = 67
     Width = 177
-    Height = 21
+    Height = 50
     DataField = 'exer_ativi'
     DataSource = dtm.ds_avaliacao
     TabOrder = 9
@@ -805,7 +805,7 @@ object frm_avaliacao: Tfrm_avaliacao
     Left = 592
     Top = 142
     Width = 177
-    Height = 21
+    Height = 53
     DataField = 'objetivos'
     DataSource = dtm.ds_avaliacao
     TabOrder = 10
@@ -872,7 +872,7 @@ object frm_avaliacao: Tfrm_avaliacao
     Left = 64
     Top = 108
     Width = 177
-    Height = 21
+    Height = 23
     Ctl3D = True
     DataField = 'aluno'
     DataSource = dtm.ds_avaliacao

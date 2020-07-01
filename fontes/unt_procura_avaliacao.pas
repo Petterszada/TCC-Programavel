@@ -14,6 +14,7 @@ type
     btn_selecionar: TSpeedButton;
     procedure edt_busca_alunoKeyPress(Sender: TObject; var Key: Char);
     procedure btn_selecionarClick(Sender: TObject);
+    procedure edt_busca_alunoExit(Sender: TObject);
   private
     { Private declarations }
   public
@@ -33,6 +34,11 @@ procedure Tfrm_procura_avaliacao.btn_selecionarClick(Sender: TObject);
 begin
 frm_avaliacao.edt_aluno.Text:=inttostr(dtm.busca_alunosid_aluno.value);
 frm_procura_avaliacao.close;
+end;
+
+procedure Tfrm_procura_avaliacao.edt_busca_alunoExit(Sender: TObject);
+begin
+dtm.avaliacao.Insert;
 end;
 
 procedure Tfrm_procura_avaliacao.edt_busca_alunoKeyPress(Sender: TObject;

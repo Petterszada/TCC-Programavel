@@ -140,6 +140,7 @@ object frm_procura_avaliacao: Tfrm_procura_avaliacao
     Width = 273
     Height = 21
     TabOrder = 0
+    OnExit = edt_busca_alunoExit
     OnKeyPress = edt_busca_alunoKeyPress
   end
   object DBGrid1: TDBGrid

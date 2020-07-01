@@ -62,6 +62,12 @@ type
     busca_alunosservico: TIntegerField;
     consulta_alunos: TFDQuery;
     ds_consulta_alunos: TDataSource;
+    agendamentos: TFDQuery;
+    ds_agendamentos: TDataSource;
+    agendamentosid_agendamento: TFDAutoIncField;
+    agendamentoshora_data_agendamento: TDateTimeField;
+    agendamentosagenda: TIntegerField;
+    agendamentosaluno: TIntegerField;
     procedure servicosAfterCancel(DataSet: TDataSet);
     procedure servicosAfterPost(DataSet: TDataSet);
     procedure servicosBeforeEdit(DataSet: TDataSet);

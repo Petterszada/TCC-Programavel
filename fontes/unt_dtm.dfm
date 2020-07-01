@@ -346,4 +346,37 @@ object dtm: Tdtm
     Left = 352
     Top = 160
   end
+  object agendamentos: TFDQuery
+    Active = True
+    Connection = conexao
+    SQL.Strings = (
+      'Select * from agendamento')
+    Left = 448
+    Top = 104
+    object agendamentosid_agendamento: TFDAutoIncField
+      FieldName = 'id_agendamento'
+      Origin = 'id_agendamento'
+      ProviderFlags = [pfInWhere, pfInKey]
+    end
+    object agendamentoshora_data_agendamento: TDateTimeField
+      FieldName = 'hora_data_agendamento'
+      Origin = 'hora_data_agendamento'
+      Required = True
+    end
+    object agendamentosagenda: TIntegerField
+      FieldName = 'agenda'
+      Origin = 'agenda'
+      Required = True
+    end
+    object agendamentosaluno: TIntegerField
+      FieldName = 'aluno'
+      Origin = 'aluno'
+      Required = True
+    end
+  end
+  object ds_agendamentos: TDataSource
+    DataSet = agendamentos
+    Left = 448
+    Top = 160
+  end
 end
